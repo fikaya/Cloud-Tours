@@ -1,0 +1,37 @@
+﻿@model BusManuFacturerDTO
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Durak Güncelleme Sayfası</h3>
+
+<div class="container row">
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+
+    <div class="col-12 col-sm-8 col-md-6">
+        <form method="post" class="was-validated" asp-action="Update" asp-controller="BusManuFacturer">
+            <div>
+                <input type="hidden" asp-for="BusManuFacturerId" />
+                <label asp-for="Name">Şehir Adı</label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="Durak Adi Giriniz" required autocomplete="off" />
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="mt-2 float-right">
+                <button class="btn btn-primary" type="submit">Güncelle</button>
+            </div>
+        </form>
+    </div>
+</div>

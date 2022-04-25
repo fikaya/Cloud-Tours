@@ -1,0 +1,41 @@
+﻿@model StationDTO
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Yeni Durak Ekleme </h3>
+
+<div class="container row">
+
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+
+    <div class="col-12 col-sm-8 col-md-6">
+        <form method="post" class="was-validated" asp-action="Create" asp-controller="Station">
+            <div>
+                <label asp-for="StationName">Durak Adı</label>
+                <input type="text" asp-for="StationName" class="form-control" placeholder="Durak Adı Giriniz" required autocomplete="off" />
+                <select class="form-control mt-3" asp-for="CityId" asp-items="@ViewBag.Cities"></select>
+                <div class="valid-feedback"></div>
+                <div class="invalid feedback"></div>
+            </div>
+            <div class="mt-2 float-right">
+                <button class="btn btn-success over text-center" type="Submit">Kaydet</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+

@@ -1,0 +1,52 @@
+﻿@model BusDTO
+ 
+<div class="row">
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+    <div class="col-12 col-sm-8 col-md-6">
+
+        <div class="alert alert-warning">
+            Dikkat! Onayladığınızda bu kayıt silinecek.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="row container">
+
+    <div class="col-lg-12 col-sm-10 col-md-8 p-0">
+
+        <form method="post" asp-action="Delete" asp-controller="Bus">
+
+            <input type="hidden" asp-for="BusId" />
+
+            <div>
+                <label class="ml-0">Plaka</label>
+                <div class="ml-0 form-control col-12 mt-2">
+                    @Model.RegistrationPlate
+                </div>
+                
+            </div>
+
+            <div class="float-right mt-2">
+                <button class="btn btn-danger text-center p-2 mr-4" type="submit">Onayla</button>
+                <button class="btn btn-light text-center p-2" asp-action="Index" asp-controller="Bus">İptal</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

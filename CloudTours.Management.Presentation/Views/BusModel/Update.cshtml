@@ -1,0 +1,65 @@
+﻿@model BusModelDTO
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Model Güncelleme </h3>
+
+@*<div class="row">
+    <div class="col-12 col-md-8 col-sm-6">
+    <div class="alert alert-danger">
+    Bu Kayıt Silinecektir. Dikkat !!
+    </div>
+
+    </div>
+
+    </div>*@
+
+<div class="container row">
+
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+
+
+    <div class="col-12 col-sm-8 col-md-6">
+        <form method="post" class="was-validated" asp-action="Update" asp-controller="BusModel">
+
+            <div>
+                <input type="hidden" asp-for="@Model.BusModelId" />
+                <input type="hidden" asp-for="@Model.BusManuFacturerId" />
+                <input type="hidden" asp-for="@Model.HasToilet" />
+                <input type="hidden" asp-for="@Model.Type" />
+                <input type="hidden" asp-for="@Model.SeatCapacity" />
+
+
+
+                <div>
+                    <label asp-for="BusModelName">Model Adı</label>
+                    <input type="text" asp-for="BusModelName" class="form-control" placeholder="Model Adı Giriniz" required autocomplete="off" />
+
+                </div>
+
+                <div class="valid-feedback"></div>
+                <div class="invalid feedback"></div>
+
+            </div>
+            <div class="mt-2 float-right">
+                <button class="btn btn-success over text-center" type="Submit">Güncelle</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+

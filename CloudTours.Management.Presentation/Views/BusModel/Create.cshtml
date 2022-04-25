@@ -1,0 +1,69 @@
+﻿@model BusModelDTO
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Yeni Model Ekleme </h3>
+
+<div class="container row">
+
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+
+    <div class="col-12 col-sm-8 col-md-6">
+        <form method="post" class="was-validated" asp-action="Create" asp-controller="BusModel">
+            <div>
+                <div>
+                    <label asp-for="BusModelName">Model Adı</label>
+                    <input type="text" asp-for="BusModelName" class="form-control" placeholder="Model Adı Giriniz" required autocomplete="off" />
+                </div>
+                <div class="mt-3">
+                    <label asp-for="Type">Türü</label>
+                    <select class="form-control " asp-for="Type" asp-items="@Html.GetEnumSelectList<BusType>()"></select>
+                </div>
+                <div class="mt-3">
+                    <label asp-for="SeatCapacity">Koltuk Kapasitesi</label>
+                    <select class="form-control " asp-for="SeatCapacity" asp-items="@ViewBag.comboboxCount"></select>
+                </div>
+
+
+                <div class="mt-3">
+                    <label asp-for="BusManuFacturerId">Marka Adı</label>
+                    <select class="form-control " asp-for="BusManuFacturerId" asp-items="@ViewBag.busManuList"></select>
+                </div>
+
+                @* <div class="mt-3">
+                        <label asp-for="SeatCapacity">Kapasitesi</label>
+                    </div>*@
+
+                <div class="mt-3">
+                    <label asp-for="HasToilet"> WC Var Mı ?</label>
+                    <input type="checkbox" asp-for="HasToilet" value="true" />
+                </div>
+
+
+
+                <div class="valid-feedback"></div>
+                <div class="invalid feedback"></div>
+
+            </div>
+            <div class="mt-2 float-right">
+                <button class="btn btn-success over text-center" type="Submit">Kaydet</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+

@@ -1,0 +1,35 @@
+﻿@model CityDTO
+
+
+@if (ViewBag.CommandResult!=null)
+{
+    var result =(CommandResult)ViewBag.CommandResult;
+
+    foreach (var item in result.Messages)
+    {
+        <div class="alert alert-danger")>
+         @item   
+        </div>
+    }
+}
+
+<h3>Yeni Sehir Ekleme </h3>
+
+<div class="container row">
+    <div class="col-12 col-sm-8 col-md-6">
+        <form method="post" class="was-validated" asp-action="Create" asp-controller="City">
+           <div>
+               <label asp-for="CityName">Şehir Adı</label>
+               <input type="text" asp-for="CityName" class="form-control" placeholder="Sehir Adı Giriniz" required autocomplete="off"/> 
+               <div class="valid-feedback"></div>
+               <div class="invalid feedback"></div>
+           </div>
+            <div class="mt-2 float-right">
+                   <button class="btn btn-success over text-center" type="Submit">Kaydet</button>
+               </div>
+
+        </form>
+    </div>
+
+</div>
+

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTours.Domain", "CloudTours.Domain\CloudTours.Domain.csproj", "{9B7ADF99-9B91-49F2-8B54-31987C2A522A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTours.Management.Application", "CloudTours.Management.Application\CloudTours.Management.Application.csproj", "{0893261D-8160-483E-9E89-D6D473E9EDDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTours.Management.DataAccess", "CloudTours.Management.DataAccess\CloudTours.Management.DataAccess.csproj", "{6713E768-BCBE-41AF-B0F4-CF1DA70A2A92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTours.Persistence", "CloudTours.Persistence\CloudTours.Persistence.csproj", "{8E213FFE-649E-4D0E-AFED-C0C96B2E1B9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTours.Management.Presentation", "CloudTours.Management.Presentation\CloudTours.Management.Presentation.csproj", "{E59C2486-E019-411D-9205-BAB2EF8D17E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTours", "CloudTours\CloudTours.csproj", "{B0F72430-851B-4A75-BADE-FF10BDA24673}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B7ADF99-9B91-49F2-8B54-31987C2A522A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7ADF99-9B91-49F2-8B54-31987C2A522A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7ADF99-9B91-49F2-8B54-31987C2A522A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7ADF99-9B91-49F2-8B54-31987C2A522A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0893261D-8160-483E-9E89-D6D473E9EDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0893261D-8160-483E-9E89-D6D473E9EDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0893261D-8160-483E-9E89-D6D473E9EDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0893261D-8160-483E-9E89-D6D473E9EDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6713E768-BCBE-41AF-B0F4-CF1DA70A2A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6713E768-BCBE-41AF-B0F4-CF1DA70A2A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6713E768-BCBE-41AF-B0F4-CF1DA70A2A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6713E768-BCBE-41AF-B0F4-CF1DA70A2A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E213FFE-649E-4D0E-AFED-C0C96B2E1B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E213FFE-649E-4D0E-AFED-C0C96B2E1B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E213FFE-649E-4D0E-AFED-C0C96B2E1B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E213FFE-649E-4D0E-AFED-C0C96B2E1B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59C2486-E019-411D-9205-BAB2EF8D17E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59C2486-E019-411D-9205-BAB2EF8D17E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59C2486-E019-411D-9205-BAB2EF8D17E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59C2486-E019-411D-9205-BAB2EF8D17E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F72430-851B-4A75-BADE-FF10BDA24673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F72430-851B-4A75-BADE-FF10BDA24673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F72430-851B-4A75-BADE-FF10BDA24673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F72430-851B-4A75-BADE-FF10BDA24673}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AF77962-701E-4434-B4D5-B9577C8EBD55}
+	EndGlobalSection
+EndGlobal

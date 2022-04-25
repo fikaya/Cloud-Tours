@@ -1,0 +1,42 @@
+﻿@model CityDTO
+ 
+<div class="row">
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12">
+                @item
+            </div>
+        }
+    }
+
+    <div class="col-lg-12 col-sm-8 col-md-6">
+        <div class="col-8 alert alert-warning">
+            Dikkat!Onayladığınızda Bu Kayıt Silinecek
+        </div>
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-12 col-sm-10 col-md-8 p-0">
+        <form asp-action="Delete" method="post">
+
+            <input type="hidden" asp-for="CityId" />
+
+            <div class="col-12 pl-0">
+                <label class="ml-0">Şehir Adı</label>
+                <div class="ml-0 form-control col-12 mt-2">
+                    @Model.CityName
+                </div>
+                <div class="float-right mt-2">
+                    <button class="btn btn-danger text-center p-2 mr-4" type="submit">Onayla</button>
+                    <button class="btn btn-light text-center p-2 mr-4" asp-action="Index" asp-controller="City">İptal</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

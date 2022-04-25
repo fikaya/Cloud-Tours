@@ -1,0 +1,56 @@
+﻿@model BusDTO
+ 
+<h3>Model Güncelleme </h3>
+
+ 
+<div class="container row">
+
+
+    @if (ViewBag.CommandResult != null)
+    {
+        var result = (CommandResult)ViewBag.CommandResult;
+
+        foreach (var item in result.Messages)
+        {
+            <div class="alert alert-danger col-12" )>
+                @item
+            </div>
+        }
+    }
+
+    <div class="col-12 col-sm-8 col-md-6">
+
+        <form method="post" class="was-validated" asp-action="Update" asp-controller="Bus">
+
+            <div>
+                <input type="hidden" asp-for="@Model.BusId" />
+                <input type="hidden" asp-for="@Model.BusModelId" />
+
+                <input type="hidden" asp-for="@Model.DistanceTraveled" />
+                <input type="hidden" asp-for="@Model.Year" />
+
+
+                <div>
+                    <label asp-for="RegistrationPlate">Plaka</label>
+                    <input type="text" asp-for="RegistrationPlate" class="form-control" placeholder="Plaka Giriniz" required autocomplete="off" />
+                </div>
+
+                <div>
+                    <label asp-for="SeatMapping">Refah Düzeyi</label>
+                    <select class="form-control" asp-for="SeatMapping" asp-items="@Html.GetEnumSelectList<SeatingType>()"></select>
+                </div>
+
+                <div class="valid-feedback"></div>
+                <div class="invalid feedback"></div>
+
+            </div>
+            <div class="mt-2 float-right">
+                <button class="btn btn-success over text-center" type="Submit">Güncelle</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
